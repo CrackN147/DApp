@@ -1,9 +1,13 @@
 import React from "react";
 const EvaluationButton = (props:any) => {
-  const { active, index } = props;
+  const { active, index, autoSave } = props;
   return (
     <div className="p-1 m-1">
-      <button className="btn rounded-5 bg-transparent border px-4 py-3 custom--btn">
+      <button className={`btn rounded-5 bg-transparent border px-4 py-3 custom--btn ${active ? 'active' : ''}`}
+        name="evaluation"
+        value={index}
+        onClick={autoSave}
+      >
         {index}
       </button>
     </div>
