@@ -7,10 +7,10 @@ const DateMoment = (props:any) => {
 		weekdays : "კვირა_ორშაბათი_სამშაბათი_ოთხშაბათი_ხუთშაბათი_პარასკევი_შაბათი".split("_"),
 	});
 
-	let dateISO = moment(date).toISOString();
+	let dateISO = moment(date, "DD.MM.YYYY").toISOString();
 	let result = moment(dateISO).locale(config.STATIC.LANG).format(format ? format : "DD.MM.YYYY");
 	return (
-    <h3 className={className ?? 'text-center'}>{result}</h3>
+    <h3 className={className ?? 'text-center date'}>{result}</h3>
   )
 };
 

@@ -1,6 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~swiper/css";
-@import "~swiper/css/navigation";
+@import "~swiper/css/scrollbar";
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +8,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  &.mood--1 {
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  &.mood--2 {
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  &.mood--3 {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+  }
+  &.mood--4 {
+    background: #dd3e54;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6be585, #dd3e54);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6be585, #dd3e54); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  &.mood--5 {
+    background: #74ebd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 }
 
 code {
@@ -25,19 +51,38 @@ code {
     border-color: blueviolet !important;
     transition: all 0.3s ease-in-out;
   }
+  &.disabled {
+    cursor: default !important;
+  }
 }
 
 .mySwiper { 
-  margin: 20px;
+  margin: 20px auto;
+  padding: 0 0 20px 0;
 }
 
 .entry-view {
   height: 200px;
+  justify-content: space-between;
+  border: 1px solid #eaeaea;
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #bcbbbb !important;
+  }
+  &.special {
+    &:hover {
+      cursor: default;
+      border: 1px solid #eaeaea !important;
+    }
+  }
+  h3 {
+    font-size: 15px;
+  }
   p {
     max-height: 120px;
     max-width: 100%;
     overflow: hidden;
-    margin: 0;
+    margin: 10px auto;
     direction: ltr;
   }
 }
@@ -54,4 +99,14 @@ code {
 
 textarea {
   resize: none;
+  width: 50% !important;
+}
+
+@media (max-width: 575.98px) {
+  .custom--btn{
+    padding: 10px 15px !important;
+  }
+  textarea {
+    width: 90% !important;
+  }
 }

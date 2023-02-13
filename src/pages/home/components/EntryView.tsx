@@ -1,9 +1,9 @@
 import React from "react";
 import {EvaluationButton} from "../components";
 const EntryView = (props:any) => {
-  const { item } = props;
+  const { item, loadData, special } = props;
   return (
-    <div className="border rounded-5 p-3 d-flex flex-column entry-view">
+    <div className={`rounded-5 p-3 d-flex flex-column entry-view ${special ? 'special' : ''}`} onClick={loadData}>
       <h3>
         {item.date}
       </h3>
@@ -14,7 +14,7 @@ const EntryView = (props:any) => {
         <EvaluationButton {...{
           active: item,
           index: item.evaluation,
-          autoSave: () => {}
+          autoSave: false
         }} />
       }
     </div>
