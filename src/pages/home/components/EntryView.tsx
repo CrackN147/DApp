@@ -3,7 +3,7 @@ import {EvaluationButton} from "../components";
 const EntryView = (props:any) => {
   const { item, loadData, special } = props;
   return (
-    <div className={`rounded-5 p-3 d-flex flex-column entry-view ${special ? 'special' : ''}`} onClick={loadData}>
+    <div className={`rounded-5 p-3 d-flex flex-column entry-view ${special || item.empty ? 'special' : ''}`} onClick={loadData}>
       <h3>
         {item.date}
       </h3>

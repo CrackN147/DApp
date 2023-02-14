@@ -29,6 +29,9 @@ const Home = () => {
   }
 
   const processEntry = (item:any) => {
+    if(item.empty) {
+      return;
+    }
     setActive(item);
     processMood(item.evaluation);
   }
@@ -98,7 +101,7 @@ const Home = () => {
   return (
     <div className='container'>
       <div className='row'>
-        <h1 className='text-center p-1'>Diary</h1>
+        <h1 className='text-center p-1'>დღიური</h1>
         {active &&
           <EntryEdit {...{
             active,
